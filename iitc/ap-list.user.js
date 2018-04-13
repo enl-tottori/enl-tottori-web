@@ -2,7 +2,7 @@
 // @id             iitc-plugin-ap-list@xelio
 // @name           IITC plugin: AP List
 // @category  Deleted
-// @version        0.5.7.20180413.182039
+// @version        0.5.7.20180413.182400
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      none
 // @downloadURL    none

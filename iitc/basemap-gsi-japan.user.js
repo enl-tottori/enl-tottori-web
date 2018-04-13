@@ -1,12 +1,12 @@
 // ==UserScript==
-// @id             iitc-plugin-basemap-opencyclepam@jonatkins
-// @name           IITC plugin: OpenCycleMap.org map tiles
+// @id             iitc-plugin-basemap-gsi-japan
+// @name           IITC plugin: GSI map tiles (Japan Only)
 // @category       Map Tiles
-// @version        0.2.0.20180413.182400
+// @version        0.2.4.20180413.182400
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      none
 // @downloadURL    none
-// @description    [local-2018-04-13-182400] Add the OpenCycleMap.org map tiles as an optional layer.
+// @description    [local-2018-04-13-182400] Add the Geospatial Information Authority of Japan map tiles as optional layers. Available only in Japan.
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*
@@ -27,43 +27,64 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'local';
 plugin_info.dateTimeVersion = '20180413.182400';
-plugin_info.pluginId = 'basemap-opencyclemap';
+plugin_info.pluginId = 'basemap-gsi-japan';
 //END PLUGIN AUTHORS NOTE
 
 
 
 // PLUGIN START ////////////////////////////////////////////////////////
 
+// Map data © 国土地理院 (The Geospatial Information Authority of Japan)
+//
+// The bathymetric contours are derived from those contained within the GEBCO
+// Digital Atlas, published by the BODC on behalf of IOC and IHO (2003)
+// (http://www.gebco.net)
+//
+// 海上保安庁許可第２２２５１０号（水路業務法第２５条に基づく類似刊行物）
+//
+// GSI's terms of use: http://www.gsi.go.jp/ENGLISH/page_e30286.html
+//
+// > The Terms of Use are compatible with the Creative Commons Attribution
+// > License 4.0 (hereinafter referred to as the CC License). This means that
+// > Content based on the Terms of Use may be used under the CC License in
+// > lieu of the Terms of Use.
 
 // use own namespace for plugin
-window.plugin.mapTileOpenCycleMap = {
+window.plugin.mapTileGsiJapan = {
   addLayer: function() {
-    //the Thunderforest (OpenCycleMap) tiles are free to use - http://www.thunderforest.com/terms/
 
-    var ocmOpt = {
-      attribution: 'Tiles © OpenCycleMap, Map data © OpenStreetMap',
+    // Register the GSI map tiles as base layers.
+
+    var basicOptions = {
+      minZoom:       5,
+      maxZoom:       21,
       maxNativeZoom: 18,
-      maxZoom: 21,
+      detectRetina:  true,
     };
+    var layerAttributes = [
+      { layerName: 'GSI of Japan (Standard)', tileName:'標準地図', directory: 'std'  },
+      { layerName: 'GSI of Japan (Pale)',     tileName:'淡色地図', directory: 'pale' },
+    ];
 
-    var layers = {
-      'cycle': 'OpenCycleMap',
-      'transport': 'Transport',
-      'transport-dark': 'Transport Dark',
-      'outdoors': 'Outdoors',
-      'landscape': 'Landscape',
-    };
-
-    for(var i in layers) {
-      var layer = new L.TileLayer('http://{s}.tile.thunderforest.com/' + i + '/{z}/{x}/{y}.png', ocmOpt);
-      layerChooser.addBaseLayer(layer, 'Thunderforest ' + layers[i]);
-    }
+    layerAttributes.forEach(function (attr) {
+      layerChooser.addBaseLayer(
+        new L.TileLayer(
+          'https://cyberjapandata.gsi.go.jp/xyz/' + attr.directory + '/{z}/{x}/{y}.png',
+          $.extend(basicOptions, {
+            attribution: '<a target="_blank" href="https://maps.gsi.go.jp/development/ichiran.html">'
+                         + '地理院タイル(' + attr.tileName + ')</a>'
+          })
+        ),
+        attr.layerName
+      );
+    });
   },
 };
 
-var setup =  window.plugin.mapTileOpenCycleMap.addLayer;
+var setup = window.plugin.mapTileGsiJapan.addLayer;
 
 // PLUGIN END //////////////////////////////////////////////////////////
+
 
 
 setup.info = plugin_info; //add the script info data to the function as a property

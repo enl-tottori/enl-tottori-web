@@ -2,11 +2,11 @@
 // @id             layer-count@fkloft
 // @name           IITC plugin: layer count
 // @category       Info
-// @version        0.1.0.20180413.170536
+// @version        0.1.0.20180413.174626
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      none
 // @downloadURL    none
-// @description    [local-2018-04-13-170536] Allow users to count nested fields
+// @description    [local-2018-04-13-174626] Allow users to count nested fields
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*
@@ -26,7 +26,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'local';
-plugin_info.dateTimeVersion = '20180413.170536';
+plugin_info.dateTimeVersion = '20180413.174626';
 plugin_info.pluginId = 'layer-count';
 //END PLUGIN AUTHORS NOTE
 

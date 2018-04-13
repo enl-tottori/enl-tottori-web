@@ -2,7 +2,7 @@
 // @id             iitc-plugin-players-resonators@rbino
 // @name           IITC plugin: Player's Resonators
 // @category       Deleted
-// @version        0.1.5.20180413.170536
+// @version        0.1.5.20180413.174626
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      none
 // @downloadURL    none

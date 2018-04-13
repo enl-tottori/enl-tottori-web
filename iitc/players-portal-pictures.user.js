@@ -1,12 +1,12 @@
 // ==UserScript==
 // @id             iitc-plugin-players-portal-pictures
 // @name           IITC plugin: Player's Portal Pictures
-// @version        0.1.0.20180413.170536
+// @version        0.1.0.20180413.174626
 // @category       Deleted
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      none
 // @downloadURL    none
-// @description    [local-2018-04-13-170536] Niantic removed the data this plugin needed. It is no longer possible to search for photo submitter.
+// @description    [local-2018-04-13-174626] Niantic removed the data this plugin needed. It is no longer possible to search for photo submitter.
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*

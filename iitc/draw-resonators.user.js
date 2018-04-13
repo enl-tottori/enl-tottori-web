@@ -2,11 +2,11 @@
 // @id             iitc-plugin-draw-resonators@xelio
 // @name           IITC plugin: Draw resonators
 // @category       Deleted
-// @version        0.6.0.20180413.174626
+// @version        0.6.0.20180413.182039
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      none
 // @downloadURL    none
-// @description    [local-2018-04-13-174626] Resonator deployment distance data is no longer available, as of 2014-05-23
+// @description    [local-2018-04-13-182039] Resonator deployment distance data is no longer available, as of 2014-05-23
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*

@@ -2,11 +2,11 @@
 // @id             iitc-plugin-distance-to-portal@jonatkins
 // @name           IITC plugin: Distance to portal
 // @category       Portal Info
-// @version        0.1.1.20180417.173354
+// @version        0.1.1.20180417.175744
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      none
 // @downloadURL    none
-// @description    [local-2018-04-17-173354] Allows your current location to be set manually, then shows the distance to the selected portal. Useful when managing portal keys.
+// @description    [local-2018-04-17-175744] Allows your current location to be set manually, then shows the distance to the selected portal. Useful when managing portal keys.
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*
@@ -26,7 +26,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'local';
-plugin_info.dateTimeVersion = '20180417.173354';
+plugin_info.dateTimeVersion = '20180417.175744';
 plugin_info.pluginId = 'distance-to-portal';
 //END PLUGIN AUTHORS NOTE
 

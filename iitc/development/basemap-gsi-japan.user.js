@@ -1,12 +1,12 @@
 // ==UserScript==
-// @id             iitc-plugin-basemap-stamen@jonatkins
-// @name           IITC plugin: Map layers from stamen.com
+// @id             iitc-plugin-basemap-gsi-japan
+// @name           IITC plugin: GSI map tiles (Japan Only)
 // @category       Map Tiles
-// @version        0.2.0.20180417.175744
+// @version        0.2.5.20180417.175744
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      none
 // @downloadURL    none
-// @description    [local-2018-04-17-175744] Add the 'Toner' and 'Watercolor' map layers from maps.stamen.com.
+// @description    [local-2018-04-17-175744] Add the map tiles provided by Geospatial Information Authority of Japan as optional layers. Available only in Japan.
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*
@@ -27,59 +27,64 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'local';
 plugin_info.dateTimeVersion = '20180417.175744';
-plugin_info.pluginId = 'basemap-stamen';
+plugin_info.pluginId = 'basemap-gsi-japan';
 //END PLUGIN AUTHORS NOTE
 
 
 
 // PLUGIN START ////////////////////////////////////////////////////////
 
+// Map data © 国土地理院 (The Geospatial Information Authority of Japan)
+//
+// The bathymetric contours are derived from those contained within the GEBCO
+// Digital Atlas, published by the BODC on behalf of IOC and IHO (2003)
+// (http://www.gebco.net)
+//
+// 海上保安庁許可第２２２５１０号（水路業務法第２５条に基づく類似刊行物）
+//
+// GSI's terms of use: http://www.gsi.go.jp/ENGLISH/page_e30286.html
+//
+// > The Terms of Use are compatible with the Creative Commons Attribution
+// > License 4.0 (hereinafter referred to as the CC License). This means that
+// > Content based on the Terms of Use may be used under the CC License in
+// > lieu of the Terms of Use.
 
 // use own namespace for plugin
-window.plugin.mapTileStamen = function() {};
+window.plugin.mapTileGsiJapan = {
+  addLayers: function() {
 
+    // Register the GSI map tiles as base layers.
 
-window.plugin.mapTileStamen.addLayer = function() {
+    var basicOptions = {
+      minZoom:       5,
+      maxZoom:       21,
+      maxNativeZoom: 18,
+      detectRetina:  true
+    };
+    var layerAttributes = [
+      { layerName: 'GSI of Japan (Standard)', tileName: '標準地図', directory: 'std'  },
+      { layerName: 'GSI of Japan (Pale)',     tileName: '淡色地図', directory: 'pale' },
+    ];
 
-  var types = {
-    'toner': [ 'Toner', 'png', 0, 20 ],
-//    'toner-hybrid': [ ' Toner Hybrid', 'png', 0, 20 ],  // transparent layer. could be useful over satellite imagery or similar
-//    'toner-labels': [ 'Toner Labels', 'png', 0, 20 ],  // transparent layer. could be useful over satellite imagery or similar
-//    'toner-lines': [ 'Toner Lines', 'png', 0, 20 ],  // transparent layer. could be useful over satellite imagery or similar
-    'toner-background': [ 'Toner Background', 'png', 0, 20 ],
-    'toner-lite': [ 'Toner Lite', 'png', 0, 20 ],
-    'watercolor': [ 'Watercolor', 'jpg', 1, 16 ],
-  };
-
-  var baseUrl = window.location.protocol == 'https:' ? 'https://stamen-tiles-{s}.a.ssl.fastly.net/' : 'http://{s}.tile.stamen.com/';
-
-
-  for (var layer in types) {
-    var info = types[layer];
-
-    var name = info[0];
-    var type = info[1];
-    var minZoom = info[2];
-    var maxZoom = info[3];
-
-    var mapLayer = new L.TileLayer (baseUrl+'{layer}/{z}/{x}/{y}.{type}', {
-      attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.',
-      subdomains: 'abcd',    
-      layer: layer,
-      type: type,
-      minZoom: minZoom,
-      maxNativeZoom: maxZoom,
-      maxZoom: 21
+    layerAttributes.forEach(function (attr) {
+      layerChooser.addBaseLayer(
+        new L.TileLayer(
+          'https://cyberjapandata.gsi.go.jp/xyz/' + attr.directory + '/{z}/{x}/{y}.png',
+          $.extend(basicOptions, {
+            attribution: '<a href="https://maps.gsi.go.jp/development/ichiran.html">'
+                         + '地理院タイル (' + attr.tileName + ')</a>',
+          })
+        ),
+        attr.layerName
+      );
     });
-
-    layerChooser.addBaseLayer(mapLayer,'Stamen '+name);
-  }
-
+  },
 };
 
-var setup =  window.plugin.mapTileStamen.addLayer;
+var setup = window.plugin.mapTileGsiJapan.addLayers;
 
 // PLUGIN END //////////////////////////////////////////////////////////
+
 
 
 setup.info = plugin_info; //add the script info data to the function as a property

@@ -2,11 +2,11 @@
 // @id             force-https@jonatkins
 // @name           IITC plugin: force https access for ingress.com/intel
 // @category       Tweaks
-// @version        0.1.0.20180417.173354
+// @version        0.1.0.20180417.175744
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      none
 // @downloadURL    none
-// @description    [local-2018-04-17-173354] Force https access for the intel map. If the intel map is accessed via http, it redirects to the https version.
+// @description    [local-2018-04-17-175744] Force https access for the intel map. If the intel map is accessed via http, it redirects to the https version.
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*

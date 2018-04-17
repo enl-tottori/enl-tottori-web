@@ -2,7 +2,7 @@
 // @id             iitc-plugin-highlight-portals-mods@vita10gy
 // @name           IITC plugin: highlight portal mods
 // @category  Deleted
-// @version        0.1.0.20180417.172327
+// @version        0.1.0.20180417.173354
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      none
 // @downloadURL    none

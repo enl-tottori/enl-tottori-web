@@ -2,11 +2,11 @@
 // @id             iitc-plugin-scale-bar@breunigs
 // @name           IITC plugin: scale bar
 // @category       Controls
-// @version        0.1.0.20180417.172327
+// @version        0.1.0.20180417.173354
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      none
 // @downloadURL    none
-// @description    [local-2018-04-17-172327] Show scale bar on the map.
+// @description    [local-2018-04-17-173354] Show scale bar on the map.
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*
@@ -26,7 +26,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'local';
-plugin_info.dateTimeVersion = '20180417.172327';
+plugin_info.dateTimeVersion = '20180417.173354';
 plugin_info.pluginId = 'scale-bar';
 //END PLUGIN AUTHORS NOTE
 

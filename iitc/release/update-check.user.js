@@ -2,11 +2,11 @@
 // @id             iitc-plugin-update-check@jonatkins
 // @name           IITC plugin: Check for updates
 // @category       Misc
-// @version        0.1.1.20180417.174654
+// @version        0.1.1.20180417.180358
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      none
 // @downloadURL    none
-// @description    [local-2018-04-17-174654] **WORK IN PROGRESS** Check for updates for IITC and plugins against http://iitc.jonatkins.com/. Can also report status messages for known IITC issues.
+// @description    [local-2018-04-17-180358] **WORK IN PROGRESS** Check for updates for IITC and plugins against http://iitc.jonatkins.com/. Can also report status messages for known IITC issues.
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*
@@ -26,7 +26,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'local';
-plugin_info.dateTimeVersion = '20180417.174654';
+plugin_info.dateTimeVersion = '20180417.180358';
 plugin_info.pluginId = 'update-check';
 //END PLUGIN AUTHORS NOTE
 

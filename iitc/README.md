@@ -1,2 +1,2 @@
-This directory is a placeholder for automatic deployment by Travis-CI.
-Don't touch the files in this directory.
+This directory is for automatic deployment by Travis-CI.
+The contents comes from https://github.com/inok6743/iitc

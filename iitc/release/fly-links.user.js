@@ -2,10 +2,10 @@
 // @id             fly-links@fly
 // @name           IITC plugin: Fly Links
 // @category       Layer
-// @version        0.2.1.20180417.174317
+// @version        0.2.1.20180417.174654
 // @updateURL      none
 // @downloadURL    none
-// @description    [local-2018-04-17-174317] Calculate how to link the portals to create the largest tidy set of nested fields. Enable from the layer chooser.
+// @description    [local-2018-04-17-174654] Calculate how to link the portals to create the largest tidy set of nested fields. Enable from the layer chooser.
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*
@@ -25,7 +25,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'local';
-plugin_info.dateTimeVersion = '20180417.174317';
+plugin_info.dateTimeVersion = '20180417.174654';
 plugin_info.pluginId = 'fly-links';
 //END PLUGIN AUTHORS NOTE
 

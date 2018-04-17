@@ -2,11 +2,11 @@
 // @id             overlay-kml@danielatkins
 // @name           IITC plugin: overlay KML
 // @category       Layer
-// @version        0.2.0.20180417.174317
+// @version        0.2.0.20180417.174654
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      none
 // @downloadURL    none
-// @description    [local-2018-04-17-174317] Allow users to overlay their own KML / GPX files on top of IITC.
+// @description    [local-2018-04-17-174654] Allow users to overlay their own KML / GPX files on top of IITC.
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*
@@ -26,7 +26,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'local';
-plugin_info.dateTimeVersion = '20180417.174317';
+plugin_info.dateTimeVersion = '20180417.174654';
 plugin_info.pluginId = 'add-kml';
 //END PLUGIN AUTHORS NOTE
 

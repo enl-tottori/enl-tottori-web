@@ -2,7 +2,7 @@
 // @id             iitc-plugin-defense@gluckies
 // @name           IITC plugin: portal defense 
 // @category       Deleted
-// @version        0.2.2.20180417.174317
+// @version        0.2.2.20180417.174654
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      none
 // @downloadURL    none
